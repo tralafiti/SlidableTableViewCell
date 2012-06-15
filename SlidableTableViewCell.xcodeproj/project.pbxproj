@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CEF0D09158B869900DFC5F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF0D08158B869900DFC5F6 /* UIKit.framework */; };
+		2CEF0D0B158B869900DFC5F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF0D0A158B869900DFC5F6 /* Foundation.framework */; };
+		2CEF0D0D158B869900DFC5F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEF0D0C158B869900DFC5F6 /* CoreGraphics.framework */; };
+		2CEF0D13158B869900DFC5F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF0D11158B869900DFC5F6 /* InfoPlist.strings */; };
+		2CEF0D15158B869900DFC5F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF0D14158B869900DFC5F6 /* main.m */; };
+		2CEF0D19158B869A00DFC5F6 /* MGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF0D18158B869A00DFC5F6 /* MGAppDelegate.m */; };
+		2CEF0D1C158B869A00DFC5F6 /* MGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF0D1B158B869A00DFC5F6 /* MGMasterViewController.m */; };
+		2CEF0D1F158B869A00DFC5F6 /* MGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF0D1E158B869A00DFC5F6 /* MGDetailViewController.m */; };
+		2CEF0D22158B869A00DFC5F6 /* MGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF0D20158B869A00DFC5F6 /* MGMasterViewController.xib */; };
+		2CEF0D25158B869A00DFC5F6 /* MGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF0D23158B869A00DFC5F6 /* MGDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CEF0D04158B869900DFC5F6 /* SlidableTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidableTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CEF0D08158B869900DFC5F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2CEF0D0A158B869900DFC5F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CEF0D0C158B869900DFC5F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2CEF0D10158B869900DFC5F6 /* SlidableTableViewCell-Info.plist */ = {isa = PBXFileReference; path = "SlidableTableViewCell-Info.plist"; sourceTree = "<group>"; };
+		2CEF0D12158B869900DFC5F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CEF0D14158B869900DFC5F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2CEF0D16158B869900DFC5F6 /* SlidableTableViewCell-Prefix.pch */ = {isa = PBXFileReference; path = "SlidableTableViewCell-Prefix.pch"; sourceTree = "<group>"; };
+		2CEF0D17158B869900DFC5F6 /* MGAppDelegate.h */ = {isa = PBXFileReference; path = MGAppDelegate.h; sourceTree = "<group>"; };
+		2CEF0D18158B869A00DFC5F6 /* MGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAppDelegate.m; sourceTree = "<group>"; };
+		2CEF0D1A158B869A00DFC5F6 /* MGMasterViewController.h */ = {isa = PBXFileReference; path = MGMasterViewController.h; sourceTree = "<group>"; };
+		2CEF0D1B158B869A00DFC5F6 /* MGMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMasterViewController.m; sourceTree = "<group>"; };
+		2CEF0D1D158B869A00DFC5F6 /* MGDetailViewController.h */ = {isa = PBXFileReference; path = MGDetailViewController.h; sourceTree = "<group>"; };
+		2CEF0D1E158B869A00DFC5F6 /* MGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDetailViewController.m; sourceTree = "<group>"; };
+		2CEF0D21158B869A00DFC5F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MGMasterViewController.xib; sourceTree = "<group>"; };
+		2CEF0D24158B869A00DFC5F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MGDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CEF0D01158B869900DFC5F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CEF0D09158B869900DFC5F6 /* UIKit.framework in Frameworks */,
+				2CEF0D0B158B869900DFC5F6 /* Foundation.framework in Frameworks */,
+				2CEF0D0D158B869900DFC5F6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CEF0CF9158B869900DFC5F6 = {
+			isa = PBXGroup;
+			children = (
+				2CEF0D0E158B869900DFC5F6 /* SlidableTableViewCell */,
+				2CEF0D07158B869900DFC5F6 /* Frameworks */,
+				2CEF0D05158B869900DFC5F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CEF0D05158B869900DFC5F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CEF0D04158B869900DFC5F6 /* SlidableTableViewCell.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CEF0D07158B869900DFC5F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CEF0D08158B869900DFC5F6 /* UIKit.framework */,
+				2CEF0D0A158B869900DFC5F6 /* Foundation.framework */,
+				2CEF0D0C158B869900DFC5F6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CEF0D0E158B869900DFC5F6 /* SlidableTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CEF0D17158B869900DFC5F6 /* MGAppDelegate.h */,
+				2CEF0D18158B869A00DFC5F6 /* MGAppDelegate.m */,
+				2CEF0D1A158B869A00DFC5F6 /* MGMasterViewController.h */,
+				2CEF0D1B158B869A00DFC5F6 /* MGMasterViewController.m */,
+				2CEF0D1D158B869A00DFC5F6 /* MGDetailViewController.h */,
+				2CEF0D1E158B869A00DFC5F6 /* MGDetailViewController.m */,
+				2CEF0D20158B869A00DFC5F6 /* MGMasterViewController.xib */,
+				2CEF0D23158B869A00DFC5F6 /* MGDetailViewController.xib */,
+				2CEF0D0F158B869900DFC5F6 /* Supporting Files */,
+			);
+			path = SlidableTableViewCell;
+			sourceTree = "<group>";
+		};
+		2CEF0D0F158B869900DFC5F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CEF0D10158B869900DFC5F6 /* SlidableTableViewCell-Info.plist */,
+				2CEF0D11158B869900DFC5F6 /* InfoPlist.strings */,
+				2CEF0D14158B869900DFC5F6 /* main.m */,
+				2CEF0D16158B869900DFC5F6 /* SlidableTableViewCell-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CEF0D03158B869900DFC5F6 /* SlidableTableViewCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CEF0D28158B869A00DFC5F6 /* Build configuration list for PBXNativeTarget "SlidableTableViewCell" */;
+			buildPhases = (
+				2CEF0D00158B869900DFC5F6 /* Sources */,
+				2CEF0D01158B869900DFC5F6 /* Frameworks */,
+				2CEF0D02158B869900DFC5F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlidableTableViewCell;
+			productName = SlidableTableViewCell;
+			productReference = 2CEF0D04158B869900DFC5F6 /* SlidableTableViewCell.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CEF0CFB158B869900DFC5F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MG;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2CEF0CFE158B869900DFC5F6 /* Build configuration list for PBXProject "SlidableTableViewCell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2CEF0CF9158B869900DFC5F6;
+			productRefGroup = 2CEF0D05158B869900DFC5F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CEF0D03158B869900DFC5F6 /* SlidableTableViewCell */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CEF0D02158B869900DFC5F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CEF0D13158B869900DFC5F6 /* InfoPlist.strings in Resources */,
+				2CEF0D22158B869A00DFC5F6 /* MGMasterViewController.xib in Resources */,
+				2CEF0D25158B869A00DFC5F6 /* MGDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CEF0D00158B869900DFC5F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CEF0D15158B869900DFC5F6 /* main.m in Sources */,
+				2CEF0D19158B869A00DFC5F6 /* MGAppDelegate.m in Sources */,
+				2CEF0D1C158B869A00DFC5F6 /* MGMasterViewController.m in Sources */,
+				2CEF0D1F158B869A00DFC5F6 /* MGDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2CEF0D11158B869900DFC5F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CEF0D12158B869900DFC5F6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2CEF0D20158B869A00DFC5F6 /* MGMasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CEF0D21158B869A00DFC5F6 /* en */,
+			);
+			name = MGMasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		2CEF0D23158B869A00DFC5F6 /* MGDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CEF0D24158B869A00DFC5F6 /* en */,
+			);
+			name = MGDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CEF0D26158B869A00DFC5F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2CEF0D27158B869A00DFC5F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CEF0D29158B869A00DFC5F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SlidableTableViewCell/SlidableTableViewCell-Prefix.pch";
+				INFOPLIST_FILE = "SlidableTableViewCell/SlidableTableViewCell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2CEF0D2A158B869A00DFC5F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SlidableTableViewCell/SlidableTableViewCell-Prefix.pch";
+				INFOPLIST_FILE = "SlidableTableViewCell/SlidableTableViewCell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CEF0CFE158B869900DFC5F6 /* Build configuration list for PBXProject "SlidableTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CEF0D26158B869A00DFC5F6 /* Debug */,
+				2CEF0D27158B869A00DFC5F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CEF0D28158B869A00DFC5F6 /* Build configuration list for PBXNativeTarget "SlidableTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CEF0D29158B869A00DFC5F6 /* Debug */,
+				2CEF0D2A158B869A00DFC5F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CEF0CFB158B869900DFC5F6 /* Project object */;
+}
