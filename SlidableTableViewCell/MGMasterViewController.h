@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGSlidableTableViewCellDelegate.h"
 
 @class MGDetailViewController;
 
-@interface MGMasterViewController : UITableViewController
-
-@property (strong, nonatomic) MGDetailViewController *detailViewController;
+@interface MGMasterViewController : UITableViewController <MGSlidableTableViewCellDelegate>
 
 @end

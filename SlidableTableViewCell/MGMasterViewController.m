@@ -7,58 +7,44 @@
 //
 
 #import "MGMasterViewController.h"
-
-#import "MGDetailViewController.h"
+#import "MGSlidableTableViewCell.h"
 
 @interface MGMasterViewController () {
-    NSMutableArray *_objects;
+    NSArray *_objects;
 }
 @end
 
 @implementation MGMasterViewController
 
-@synthesize detailViewController = _detailViewController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = @"Demo";
+        _objects = [NSArray arrayWithObjects:@"left wuff right", @"wuff left wuff", @"right wuff wuff", nil];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"bounce" style:UIBarButtonItemStylePlain target:self action:@selector(toogleBounce)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(toogleEdit)];
     }
     return self;
 }
-							
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-}
-
-- (void)viewDidUnload
+- (void)toogleBounce
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    MGSlidableTableViewCell* cell;
+    for(cell in self.tableView.visibleCells) {
+        cell.bounceEnabled = !cell.bounceEnabled;
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    self.navigationItem.leftBarButtonItem.title = (((MGSlidableTableViewCell*)[self.tableView.visibleCells lastObject]).bounceEnabled) ? @"no bounce" : @"bounce";
 }
 
+- (void)toogleEdit
+{
+    [self setEditing:!self.editing animated:YES];   
+    self.navigationItem.rightBarButtonItem.title = (self.editing) ? @"Done" : @"Edit";
+}
+							
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -76,58 +62,58 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MGSlidableTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell = [[MGSlidableTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.contentView.backgroundColor = [UIColor whiteColor];        
+        cell.delegate = self;
+        
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            UIImage* leftShadow = [UIImage imageNamed:@"shadow-left.png"];
+            cell.leftSlideView = [[UIImageView alloc] initWithImage:[leftShadow resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 9)]];
+            cell.leftTriggerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check-empty.png"] highlightedImage:[UIImage imageNamed:@"check-full.png"]];
+        }
+        
+        if (indexPath.row == 0 || indexPath.row == 2) {
+            UIImage* rightShadow = [UIImage imageNamed:@"shadow-right.png"];
+            cell.rightSlideView = [[UIImageView alloc] initWithImage:[rightShadow resizableImageWithCapInsets:UIEdgeInsetsMake(0, 9, 0, 0)]];        
+            cell.rightTriggerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check-empty.png"] highlightedImage:[UIImage imageNamed:@"check-full.png"]];
+        }        
     }
-
 
     NSDate *object = [_objects objectAtIndex:indexPath.row];
     cell.textLabel.text = [object description];
+    cell.imageView.image = [UIImage imageNamed:@"random-dog.jpg"];
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return self.editing;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[MGDetailViewController alloc] initWithNibName:@"MGDetailViewController" bundle:nil];
-    }
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = object;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0;
+}
+
+# pragma - MGSlidableTableViewCellDelegate Methods
+
+- (void)slidableTableViewCellDidTriggerLeftAction:(MGSlidableTableViewCell *)cell
+{
+    [[[UIAlertView alloc] initWithTitle:@"Trigger" message:@"left action triggered" delegate:nil cancelButtonTitle:@"thanks" otherButtonTitles:nil] show];
+}
+
+- (void)slidableTableViewCellDidTriggerRightAction:(MGSlidableTableViewCell *)cell
+{
+    [[[UIAlertView alloc] initWithTitle:@"Trigger" message:@"right action triggered" delegate:nil cancelButtonTitle:@"thanks" otherButtonTitles:nil] show];
+}
+
 
 @end
